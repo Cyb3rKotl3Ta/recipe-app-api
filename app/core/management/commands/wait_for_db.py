@@ -9,6 +9,7 @@ import time
 
 from psycopg2 import OperationalError as Psycopg2OpError
 
+
 class Command(BaseCommand):
     """Django command to wait for database."""
 
