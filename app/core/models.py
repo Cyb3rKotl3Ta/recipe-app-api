@@ -33,12 +33,6 @@ class UserManager(BaseUserManager):
 
         return user
 
-        # Create a new user with the given email and password.
-        # user = self.model(email=self.normalize_email(email), **extra_fields)
-        # user.set_password(password)
-        # user.is_staff = True
-        # user.is_superuser = True
-
 
 class User(AbstractBaseUser, PermissionsMixin):
     """User in the system."""
