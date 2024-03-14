@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     # OUR APPS
     'core',
     'rest_framework',
-    'drf_spectacular'
+    'drf_spectacular',
+    'user',
 ]
 
 MIDDLEWARE = [
