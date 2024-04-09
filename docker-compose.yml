@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   app:
-    build: 
+    build:
       context: .
       args:
         - DEV=true
@@ -22,12 +22,12 @@ services:
 
     depends_on:
       - db
-      
+
 
   db:
-    image: postgres:13-alpine 
+    image: postgres:13-alpine
     volumes:
-      - dev-db-data:/var/lib/postgreslq/data
+      - dev-db-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
