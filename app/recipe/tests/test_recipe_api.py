@@ -146,6 +146,7 @@ class PrivateRecipeAPITests(TestCase):
         payload = {
             'title': 'New recipe title',
             'link': 'https://example.com/new-recipe.pdf',
+            'description': 'New recipe description',
             'time_minutes': 10,
             'price': Decimal('2.50')
         }
@@ -194,13 +195,10 @@ class PrivateRecipeAPITests(TestCase):
     def test_create_recipe_with_new_tags(self):
         """Test creating a recipe with new tags"""
         payload = {
-            'title': 'Thai Pawn Curry',
+            'title': 'Thai Prawn Curry',
             'time_minutes': 30,
             'price': Decimal('2.99'),
-            'tags':[{
-                'name': 'Thai',
-                'name': 'Dinner',
-            }]
+            'tags':[{'name': 'Thai'}, {'name': 'Dinner'}],
         }
         res = self.client.post(RECIPES_URL, payload, format='json')
 
@@ -224,10 +222,7 @@ class PrivateRecipeAPITests(TestCase):
             'title': 'Pongal',
             'time_minutes': 30,
             'price': Decimal('4.99'),
-            'tags':[{
-                'name': 'Indian',
-                'name': 'Breakfast',
-            }]
+            'tags':[{'name': 'Indian'}, {'name': 'Breakfast',}],
         }
         res = self.client.post(RECIPES_URL, payload, format='json')
 
